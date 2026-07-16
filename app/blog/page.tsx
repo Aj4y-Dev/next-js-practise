@@ -1,8 +1,7 @@
-import { Post } from "@/types/post";
+import getPosts from "@/services/post";
 
 export default async function Blog() {
-  const data = await fetch("https://api.vercel.app/blog");
-  const posts: Post[] = await data.json();
+  const posts = await getPosts();
 
   return (
     <ul>
